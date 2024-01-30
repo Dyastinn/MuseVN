@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseVNWeb", "MuseVNWeb\MuseVNWeb.csproj", "{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseVNWeb", "MuseVNWeb\MuseVNWeb.csproj", "{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseVN_Temp", "MuseVN_Temp\MuseVN_Temp.csproj", "{FE977035-731F-45F7-8411-59DD04BC587F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE977035-731F-45F7-8411-59DD04BC587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE977035-731F-45F7-8411-59DD04BC587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE977035-731F-45F7-8411-59DD04BC587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE977035-731F-45F7-8411-59DD04BC587F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
