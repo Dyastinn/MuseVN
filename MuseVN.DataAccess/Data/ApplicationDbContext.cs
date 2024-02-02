@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MuseVNWeb.Models;
+using MuseVN.Models;
 
-namespace MuseVNWeb.Data;
+namespace MuseVNWeb.DataAccess.Data;
 
 public class ApplicationDbContext : DbContext{
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :base(options){

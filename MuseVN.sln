@@ -4,8 +4,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.8.34511.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseVNWeb", "MuseVNWeb\MuseVNWeb.csproj", "{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5E0D56BF-2274-4D0A-8A71-385447FC0C32} = {5E0D56BF-2274-4D0A-8A71-385447FC0C32}
+		{731A66DF-37DB-4AD1-B962-B07CC005D5AD} = {731A66DF-37DB-4AD1-B962-B07CC005D5AD}
+		{8CBD6C54-4FC1-4895-9BE4-853F04C3072A} = {8CBD6C54-4FC1-4895-9BE4-853F04C3072A}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MuseVN_Temp", "MuseVN_Temp\MuseVN_Temp.csproj", "{FE977035-731F-45F7-8411-59DD04BC587F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseVN.DataAccess", "MuseVN.DataAccess\MuseVN.DataAccess.csproj", "{5E0D56BF-2274-4D0A-8A71-385447FC0C32}"
+	ProjectSection(ProjectDependencies) = postProject
+		{731A66DF-37DB-4AD1-B962-B07CC005D5AD} = {731A66DF-37DB-4AD1-B962-B07CC005D5AD}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseVN.Models", "MuseVN.Models\MuseVN.Models.csproj", "{731A66DF-37DB-4AD1-B962-B07CC005D5AD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MuseVN.Utility", "MuseVN.Utility\MuseVN.Utility.csproj", "{8CBD6C54-4FC1-4895-9BE4-853F04C3072A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +29,18 @@ Global
 		{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC03FD8E-F8DD-487E-8CF0-C33D13DDE966}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FE977035-731F-45F7-8411-59DD04BC587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FE977035-731F-45F7-8411-59DD04BC587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FE977035-731F-45F7-8411-59DD04BC587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FE977035-731F-45F7-8411-59DD04BC587F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E0D56BF-2274-4D0A-8A71-385447FC0C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E0D56BF-2274-4D0A-8A71-385447FC0C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E0D56BF-2274-4D0A-8A71-385447FC0C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E0D56BF-2274-4D0A-8A71-385447FC0C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{731A66DF-37DB-4AD1-B962-B07CC005D5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{731A66DF-37DB-4AD1-B962-B07CC005D5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{731A66DF-37DB-4AD1-B962-B07CC005D5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{731A66DF-37DB-4AD1-B962-B07CC005D5AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CBD6C54-4FC1-4895-9BE4-853F04C3072A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CBD6C54-4FC1-4895-9BE4-853F04C3072A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CBD6C54-4FC1-4895-9BE4-853F04C3072A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CBD6C54-4FC1-4895-9BE4-853F04C3072A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
