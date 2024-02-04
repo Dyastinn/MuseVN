@@ -3,8 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuseVN.Models;
 
-public class Category
-{
+public class Category {
     [Key]
     public int Id { get; set; }
     [Required]
