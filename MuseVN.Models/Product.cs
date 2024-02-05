@@ -22,11 +22,13 @@ public class Product {
     public List<string> GameTags { get; set; }
 
     [Required]
-    public List<string> Platform { get; set}
+    public List<string> Platform { get; set; }
 
     [Required]
     public List<string> SupportedLanguage { get; set; }
 
+    [Required]
+    public DateOnly Date { get; set; }
 
 }
 

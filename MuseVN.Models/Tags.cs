@@ -27,4 +27,6 @@ public class Tags {
 
     public List<string>? SexualContent { get; set; }
 
+    public List<string>? SliceOfLife { get; set; }  
+
 }
