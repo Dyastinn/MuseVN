@@ -1,0 +1,100 @@
+﻿@model List<Product>
+
+<div class="card shadow border-primary nt-4">
+    <div class="card-header bg-primary bg-gradient">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Product List</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+
+        <div class="row">
+            <div class="col-6">
+            </div>
+            <div class="col-6 text-end">
+                <h2 class="text-primary">
+                    <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
+                        <i class="bi bi-plus-circle"></i> Create New Product
+                    </a>
+                </h2>
+            </div>
+        </div>
+        <div class="table-responsive text-nowarp">
+        <table class="table table-striped">
+            <thead class="thead">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col-5">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Developer</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Game Tags</th>
+                    <th scope="col-0.5">Platform</th>
+                    <th scope="col">Supported Language</th>
+                    <th scope="col">Date Released</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr>
+                        <td scope="row">@obj.Id</td>
+                        <td>@obj.Title</td>
+
+                        <td scope="row">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Description 
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample" style="">
+                                            <div class="accordion-body">
+                                                @obj.Description
+                                            </div>
+                                        </div>
+                                    </div>
+                            </td>
+                        <td>@obj.Developer</td>
+                        <td scope="row">@obj.Price</td>
+                        <td>@foreach(var tags in obj.GameTags) {
+                                    <p>@tags</p>
+                            }
+                            </td>
+                        <td>
+                            @foreach (var os in obj.Platform) {
+                                <p>@os</p>
+                            }
+                        </td>
+
+                        <td>
+                            @foreach (var lang in obj.SupportedLanguage) {
+                                <p>@lang</p>
+                            }
+                        </td>
+                        <td scope="row">@obj.Date</td>
+
+                        <td>
+                            <div class="w-75 btn-group" role="group">
+                                <a asp-controller="Product" asp-action="Edit" asp-route-Id="@obj.Id" class="btn btn-primary mx-2">
+                                    <i class="bi bi-pencil-square"></i> Edit
+                                </a>
+                                <a asp-controller="Product" asp-action="Delete" asp-route-Id="@obj.Id" class="btn btn-danger border mx-2">
+                                    <i class="bi bi-file-earmark-x"></i> Delete
+                                </a>                             
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </div>
+
+    </div>
+</div>
+
+

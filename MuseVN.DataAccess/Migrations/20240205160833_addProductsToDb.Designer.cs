@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MuseVNWeb.DataAccess.Data;
 
@@ -11,9 +12,11 @@ using MuseVNWeb.DataAccess.Data;
 namespace MuseVN.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240205160833_addProductsToDb")]
+    partial class addProductsToDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,7 +112,7 @@ namespace MuseVN.DataAccess.Migrations
                             GameTags = "[\"Fantasy\",\"Horror\",\"Romance\",\"NSFW\"]",
                             Platform = "[\"Windows\"]",
                             Price = 550.0,
-                            SupportedLanguage = "[\"English\"]",
+                            SupportedLanguage = "[\"english\"]",
                             Title = "Saya no Uta"
                         },
                         new
@@ -123,84 +126,6 @@ namespace MuseVN.DataAccess.Migrations
                             Price = 1100.0,
                             SupportedLanguage = "[\"English\"]",
                             Title = "School Days"
-                        });
-                });
-
-            modelBuilder.Entity("MuseVN.Models.Tag", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<bool>("Action")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Comedy")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Drama")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Educational")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Fantasy")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Horror")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Mystery")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("NSFW")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Romance")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("ScienceFiction")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("SliceOfLife")
-                        .HasColumnType("bit");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Tags");
-
-                    b.HasData(
-                        new
-                        {
-                            id = 1,
-                            Action = false,
-                            Comedy = false,
-                            Drama = false,
-                            Educational = false,
-                            Fantasy = true,
-                            Horror = true,
-                            Mystery = false,
-                            NSFW = true,
-                            Romance = true,
-                            ScienceFiction = false,
-                            SliceOfLife = false
-                        },
-                        new
-                        {
-                            id = 2,
-                            Action = false,
-                            Comedy = false,
-                            Drama = true,
-                            Educational = false,
-                            Fantasy = false,
-                            Horror = false,
-                            Mystery = false,
-                            NSFW = true,
-                            Romance = true,
-                            ScienceFiction = false,
-                            SliceOfLife = true
                         });
                 });
 #pragma warning restore 612, 618

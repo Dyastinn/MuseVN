@@ -30,5 +30,6 @@ public class Product {
     [Required]
     public DateOnly Date { get; set; }
 
+
 }
 
