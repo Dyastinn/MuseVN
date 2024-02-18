@@ -2,6 +2,7 @@
 using MuseVN.Models;
 using MuseVNWeb.DataAccess.Data;
 using MuseVN.DataAccess.Repository.IRepository;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace MuseVNWeb.Areas.Admin.Controllers;
@@ -17,6 +18,8 @@ public class ProductController : Controller
     public IActionResult Index()
     {
         List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
+        
+
         return View(objProductList);
     }
 

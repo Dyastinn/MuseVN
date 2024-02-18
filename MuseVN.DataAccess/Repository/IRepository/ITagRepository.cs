@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MuseVN.DataAccess.Repository.IRepository; 
-public interface ITagsRepository : IRepository<Tag> {
-
-    void Update(Tag tags);
+public interface ITagRepository: IRepository<Tag> {
+    void Update(Tag tag);
 }

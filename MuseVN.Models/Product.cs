@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MuseVN.Models;
 public class Product {
@@ -18,17 +19,24 @@ public class Product {
     [Required]
     public double Price { get; set;}
 
-    [Required]
-    public List<string> GameTags { get; set; }
+    public int TagId { get; set; }
+    [ForeignKey("TagId")]
+    public Tag Tag { get; set; }
 
-    [Required]
-    public List<string> Platform { get; set; }
+    public int PlatformId {  get; set; }
+    [ForeignKey("PlatformId")]
+    public Platform Platform { get; set; }
 
-    [Required]
-    public List<string> SupportedLanguage { get; set; }
+    public int SupportedLangId { get; set; }
+    [ForeignKey("SupportedLangId")]
+    public Language Language { get; set; }
 
-    [Required]
+
     public DateOnly Date { get; set; }
+
+    public string ImageUrl {  get; set; }
+
+   
 
 
 }

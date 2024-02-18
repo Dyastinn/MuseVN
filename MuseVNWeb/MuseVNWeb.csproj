@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Language\" />
+    <Folder Include="Areas\Admin\Views\Platform\" />
+    <Folder Include="Areas\Admin\Views\Tag\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
 
