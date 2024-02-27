@@ -12,5 +12,7 @@ public interface IUnitOfWork {
     ITagRepository Tag { get; }
 
     ILanguageRepository Language { get; }
+
+    IPlatformRepository Platform { get; }
     public void Save();
 }
