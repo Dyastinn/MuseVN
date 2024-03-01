@@ -3,6 +3,7 @@ using MuseVN.Models;
 using MuseVNWeb.DataAccess.Data;
 using MuseVN.DataAccess.Repository.IRepository;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using MuseVN.Models.ViewModels;
 
 
 namespace MuseVNWeb.Areas.Admin.Controllers;
@@ -18,21 +19,43 @@ public class ProductController : Controller
     public IActionResult Index()
     {
         List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
-        
+       
 
         return View(objProductList);
     }
 
     public IActionResult Create()
     {
-        return View();
+
+
+        
+        ProductViewModel productViewModel = new() {
+            Product = new Product(),
+            TagList = _unitOfWork.Tag
+            .GetAll().Select(u => new SelectListItem {
+                Text = u.Name,
+                Value = u.Id.ToString(),
+            }),
+            LanguageList = _unitOfWork.Language
+            .GetAll().Select(u => new SelectListItem {
+                Text = u.Name,
+                Value = u.Id.ToString(),
+            }),
+            PlatformList = _unitOfWork.Platform
+            .GetAll().Select(u => new SelectListItem {
+                Text = u.Name,
+                Value = u.Id.ToString(),
+            })
+        };
+
+        return View(productViewModel);
     }
     [HttpPost]
-    public IActionResult Create(Product obj)
+    public IActionResult Create(ProductViewModel obj)
     {
         if (ModelState.IsValid)
         {
-            _unitOfWork.Product.Add(obj);
+            _unitOfWork.Product.Add(obj.Product);
             _unitOfWork.Save();
             TempData["success"] = "A new Product has been added";
             return RedirectToAction("Index", "Product");

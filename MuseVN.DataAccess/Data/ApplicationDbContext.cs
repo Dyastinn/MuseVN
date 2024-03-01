@@ -33,9 +33,9 @@ public class ApplicationDbContext : DbContext{
                 Developer = "Nitro Plus",
                 Price = 499.00,
                 Date = new DateOnly(2013, 5, 5),
-                TagId = 1,
-                SupportedLangId = 1,
-                PlatformId = 1,
+                Tag = "Drama, Romance",
+                Language = "English",
+                Platform = "Windows",
                 ImageUrl = ""
 
             },
@@ -46,9 +46,9 @@ public class ApplicationDbContext : DbContext{
                 Developer = "Overflow",
                 Price = 999.00,
                 Date = new DateOnly(2012, 6, 28),
-                TagId = 2, 
-                SupportedLangId = 2,
-                PlatformId = 2,
+                Tag = "Drama, Romance",
+                Language = "English",
+                Platform = "Windows",
                 ImageUrl = ""
 
             },
@@ -59,78 +59,41 @@ public class ApplicationDbContext : DbContext{
                 Developer = "Nitro Origin",
                 Price = 749.00,
                 Date = new DateOnly(2016, 3, 31),
-                TagId = 3,
-                SupportedLangId = 3,
-                PlatformId = 3,
+                Tag = "Drama, Romance, Science Fiction",
+                Language = "English",
+                Platform = "Windows",
                 ImageUrl = ""
                 
             }
         );
 
         modelBuilder.Entity<Tag>().HasData(
-            new Tag { 
-                Id = 1,
-                Fantasy = true,
-                Horror = true,
-                Romance = true,
-                NSFW = true
-
-                },
-            new Tag {
-                Id = 2,
-                Drama = true,
-                Romance = true,
-                SliceOfLife = true,
-                NSFW = true
-
-                },
-            new Tag {
-                Id = 3,
-                Drama = true,
-                Mystery = true,
-                Romance = true,
-                ScienceFiction = true
-
-               }
+            new Tag { Id = 1, Name = "Action", DisplayOrder = 1 },
+            new Tag { Id = 2, Name = "Comedy", DisplayOrder = 2 },
+            new Tag { Id = 3, Name = "Drama", DisplayOrder = 3 },
+            new Tag { Id = 4, Name = "Educational", DisplayOrder = 4 },
+            new Tag { Id = 5, Name = "Fantasy", DisplayOrder = 5 },
+            new Tag { Id = 6, Name = "Horror", DisplayOrder = 6 },
+            new Tag { Id = 7, Name = "Mystery", DisplayOrder = 7 },
+            new Tag { Id = 8, Name = "Romance", DisplayOrder = 8 },
+            new Tag { Id = 9, Name = "Science Fiction", DisplayOrder = 9 },
+            new Tag { Id = 10, Name = "NSFW", DisplayOrder = 10 },
+            new Tag { Id = 11, Name = "Slife of Life", DisplayOrder = 11 }
         );
 
         modelBuilder.Entity<Platform>().HasData(
-            new Platform {
-                Id = 1,
-                Windows = true
-
-            },
-            new Platform {
-                Id = 2,
-                Windows = true
-
-            },
-            new Platform {
-                Id = 3,
-                Windows = true
-
-            }
+            new Platform { Id = 1, Name = "Linux", DisplayOrder = 1 },
+            new Platform { Id = 2, Name = "Mac", DisplayOrder = 2 },
+            new Platform { Id = 3, Name = "Windows", DisplayOrder = 3 }
         );
 
         modelBuilder.Entity<Language>().HasData(
-            new Language {
-                Id = 1,
-                English = true,
-                Japanese = true
-
-            },
-            new Language {
-                Id = 2,
-                English = true,
-                Japanese = true
-
-            },
-            new Language {
-                Id= 3,
-                English = true,
-                Japanese = true
-
-            }
+            new Language { Id = 1, Name = "English", DisplayOrder = 1 },
+            new Language { Id = 2, Name = "Simplified Chinese", DisplayOrder = 2 },
+            new Language { Id = 3, Name = "Traditional Chinese", DisplayOrder = 3 },
+            new Language { Id = 4, Name = "Tagalog", DisplayOrder = 4 },
+            new Language { Id = 5, Name = "Spanish", DisplayOrder = 5 },
+            new Language { Id = 6, Name = "Japanese", DisplayOrder = 6 }
         );
     }
 

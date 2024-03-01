@@ -3,21 +3,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MuseVN.Models; 
 public class Language {
+
     [Key]
     public int Id { get; set; }
 
-    public bool English { get; set; }
+    [Required]
+    [MaxLength(50)]
+    [DisplayName("Category Name")]
+    public string Name { get; set; }
 
-    [DisplayName("Simplified Chinese")]
-    public bool SimplifiedChinese { get; set; }
-
-    [DisplayName("Traditional Chinese")]
-    public bool TraditionalChinese { get; set; }
-
-    public bool Tagalog {  get; set; }
-
-    public bool Spanish { get; set; }
-
-    public bool Japanese { get; set; }
+    [Required]
+    [DisplayName("Display Order")]
+    [Range(1, 100, ErrorMessage = "Display Order must be between 1-100")]
+    public int DisplayOrder { get; set; }
 
 }

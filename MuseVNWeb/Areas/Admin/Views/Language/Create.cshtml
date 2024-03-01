@@ -1,0 +1,45 @@
+﻿@model Language
+<div class="card shadow border-primary nt-4">
+    <div class="card-header bg-primary bg-gradient">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2">Create Language</h2>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-4">
+        <form method="post" class="row">
+            <div class="border p-3">
+                <div class="form-group">
+                    <div class="form-floating mb-3">
+                        <input asp-for="Name" class="form-control shadow" placeholder="New Language" />
+                        <label asp-for="Name" class="ms-2"></label>
+                    </div>
+                    <div class="form-floating">
+                        <input asp-for="DisplayOrder" class="form-control shadow" placeholder="New Language" />
+                        <label asp-for="DisplayOrder" class="ms-2"></label>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-6 col-md-3">
+                        <button type="submit" class="btn btn-primary form-control border">Create</button>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <a asp-controller="Language" asp-action="Index" class="btn btn-outline-primary form-control border">
+                            Back to list
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

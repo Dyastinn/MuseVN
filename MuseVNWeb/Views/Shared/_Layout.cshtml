@@ -31,8 +31,11 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" asp-area="Admin" data-bs-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Content Management</a>
                             <div class="dropdown-menu bg-primary">
-                                <a class="dropdown-item nav-link" asp-area="Admin" asp-controller="Category" asp-action="Index">Category</a>
+                                <a class="dropdown-item nav-link" asp-area="Admin" asp-controller="Tag" asp-action="Index">Tags</a>
                                 <div class="dropdown-divider"></div>
+                                <a class="dropdown-item nav-link" asp-area="Admin" asp-controller="Platform" asp-action="Index">Platforms</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item nav-link" asp-area="Admin" asp-controller="Language" asp-action="Index">Languages</a>
                             </div>
                         </li>
 
@@ -57,6 +60,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.tiny.cloud/1/z6ik9t2c9du8734k5drw82podkfzvo9q6mgez9sqc0lxfril/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
